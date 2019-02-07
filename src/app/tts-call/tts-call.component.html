@@ -2,7 +2,7 @@
   <div style="text-align: center;"><h3><strong>Place A Call</strong></h3></div>
   <form name="phone" #phoneCall = "ngForm" (ngSubmit) = "onClickSubmit(phoneCall.value)">
     <mat-form-field style="display:block;"> 
-      <input matInput placeholder="Mobile No." name='mob' type="number"  minlength=10 maxlength=10  ngModel required>
+      <input matInput placeholder="Mobile No." name='mob' type="tel" pattern="^\d{3}-\d{3}-\d{4}$" minlength=10 maxlength=10 ngModel required>
     </mat-form-field>
 
     <mat-form-field style="display:block;">
