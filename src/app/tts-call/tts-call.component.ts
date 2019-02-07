@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PATTERN_VALIDATOR } from '@angular/forms/src/directives/validators';
+import { PATTERN_VALIDATOR, PatternValidator } from '@angular/forms/src/directives/validators';
 // import { Observable } from '';
 // import {connect,Client} from 'node_modules/paho/paho'
 declare var Paho: any; 
@@ -24,11 +24,19 @@ export class TtsCallComponent implements OnInit {
     console.log("connected");
     //this.client.send("pi-mob","hi");
   }
+  keyPress(event: any) {
+    const pattern = /[0-9\+\-\ ]/;
+
+    let inputChar = String.fromCharCode(event.charCode);
+    if (event.keyCode != 8 && !pattern.test(inputChar)) {
+      event.preventDefault();
+    }
+  }
   onClickSubmit(data) {
     var x = data.mob +'|'+ data.text;
     console.log(x);
     this.client.send("pi-mob",x);
-   // var y=data.pattern;
+   // var y=data.ng-pattern;
    /*  if(y)
     {
       alert("You have entered correct details.")
