@@ -1,8 +1,8 @@
 <section>
   <div style="text-align: center;"><h3><strong>Place A Call</strong></h3></div>
-  <form #phoneCall = "ngForm" (ngSubmit) = "onClickSubmit(phoneCall.value)" >
+  <form name="phone" #phoneCall = "ngForm" (ngSubmit) = "onClickSubmit(phoneCall.value)" ng-controller="mainCtrl">
     <mat-form-field style="display:block;"> 
-      <input matInput placeholder="Mobile No." name='mob' type="tel" ngModel required>
+      <input matInput placeholder="Mobile No." name='mob' type="tel" ng-pattern="[0-9]{10)" ngModel required>
     </mat-form-field>
 
     <mat-form-field style="display:block;">

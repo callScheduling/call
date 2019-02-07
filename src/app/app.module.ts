@@ -8,13 +8,15 @@ import { MatFormFieldModule, MatInputModule,MatButtonModule,MatToolbarModule, Ma
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import {FormsModule} from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 // import {}
 // import * as mqtt from 'node_modules/paho/paho.js';
 @NgModule({
   declarations: [
     AppComponent,
     TtsCallComponent,
-    HomeComponent, 
+    HomeComponent,
+    LoginComponent, 
   ],
   imports: [
     FormsModule,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PATTERN_VALIDATOR } from '@angular/forms/src/directives/validators';
 // import { Observable } from '';
 // import {connect,Client} from 'node_modules/paho/paho'
 declare var Paho: any; 
@@ -27,6 +28,14 @@ export class TtsCallComponent implements OnInit {
     var x = data.mob +'|'+ data.text;
     console.log(x);
     this.client.send("pi-mob",x);
-    alert("Entered Email id : " + data.mob);
+   // var y=data.pattern;
+   /*  if(y)
+    {
+      alert("You have entered correct details.")
+    }
+    else
+    {
+      alert("Please enter correct details");
+    } */
  }
 }
