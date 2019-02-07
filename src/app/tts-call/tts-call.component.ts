@@ -27,6 +27,6 @@ export class TtsCallComponent implements OnInit {
     var x = data.mob +'|'+ data.text;
     console.log(x);
     this.client.send("pi-mob",x);
-    alert("Entered Email id : " + data.mob);
+    alert("Call will be placed to : " + data.mob);
  }
 }
