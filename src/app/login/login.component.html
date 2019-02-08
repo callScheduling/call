@@ -1,7 +1,6 @@
-<<<<<<< HEAD
 <section>
     <div style="text-align: center;"><h3><strong>User Login</strong></h3></div>
-    <form name="phone" #phoneCall = "ngForm" (ngSubmit) = "onClickSubmit(phoneCall.value)">
+    <form name="phone" #phoneCall = "ngForm" (ngSubmit) = "onClickSubmit(phone.value)">
       <mat-form-field style="display:block;"> 
         <input matInput placeholder="Username" name='username' type="text" ngModel required>
       </mat-form-field>
@@ -13,25 +12,5 @@
         <button mat-raised-button color="primary" type='submit'>Login</button>
       </div>
     </form>
-  </section>
+</section>
   
-  
-=======
-<div>
-  <center><h2>Login</h2></center>
-  <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
-      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-          <label for="username">Username</label>
-          <input type="text" class="form-control" name="username" [(ngModel)]="model.username" #username="ngModel" required />
-      </div>
-      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
-          <label for="password">Password</label>
-          <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
-      </div>
-      <div class="form-group">
-          <button class="btn btn-primary">Login</button>
-      </div>
-  </form>
-</div>
-
->>>>>>> 5d2c6b9fd6fc92c129eabc95cee05c101aad033b

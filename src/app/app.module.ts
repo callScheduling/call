@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import {FormsModule} from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { LogComponent } from './log/log.component';
 // import {}
 // import * as mqtt from 'node_modules/paho/paho.js';
 @NgModule({
@@ -16,7 +17,8 @@ import { LoginComponent } from './login/login.component';
     AppComponent,
     TtsCallComponent,
     HomeComponent,
-    LoginComponent, 
+    LoginComponent,
+    LogComponent, 
   ],
   imports: [
     FormsModule,
