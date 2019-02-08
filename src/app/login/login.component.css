@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 section{
     margin-left: 10%;
     margin-right:10%;
@@ -11,3 +12,12 @@ section{
     }
   }
   
+=======
+div{
+    text-align: center;
+    padding: 40%;
+}
+.form-group{
+    text-align: center;
+}
+>>>>>>> 5d2c6b9fd6fc92c129eabc95cee05c101aad033b
