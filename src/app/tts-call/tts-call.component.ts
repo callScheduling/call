@@ -30,6 +30,7 @@ export class TtsCallComponent implements OnInit {
     //this.client.send("pi-mob","hi");
   }
   onClickSubmit(data) {
+    var d= data.date;
     var x = data.mob +'|'+ data.text+'|'+data.date+'|'+data.time;
     console.log(x);
     this.client.send("pi-mob",x);
