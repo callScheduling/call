@@ -8,9 +8,18 @@
 <mat-toolbar>
     <mat-toolbar-row>
         <span><a routerLink="/home" routerLinkActive="active" mat-button color="primary">Dashboard</a></span>
+<<<<<<< HEAD
         <span><a routerLink="/text-to-speech-call" routerLinkActive="active" mat-button color="primary">Place A Call</a></span>
         <!-- <span><a routerLink="/login" routerLinkActive="active" mat-button color="primary">Login</a></span> -->
         <span><a routerLink="/log" routerLinkActive="active" mat-button color="primary">Log</a></span>
+=======
+        <button mat-button color="primary" [matMenuTriggerFor]= "menu">Operations</button>
+            <mat-menu #menu="matMenu">
+                    <a routerLink="/text-to-speech-call" routerLinkActive="active" mat-menu-item color="primary">Call</a>
+                    <a routerLink="/text-to-speech-call" routerLinkActive="active" color="primary" mat-menu-item>SMS</a>
+            </mat-menu>
+        <span><a routerLink="/text-to-speech-call" routerLinkActive="active" mat-button color="primary">Logs</a></span>
+>>>>>>> master
     </mat-toolbar-row>
 </mat-toolbar>
 <router-outlet></router-outlet>
