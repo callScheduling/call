@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxMaterialTimepickerTheme } from 'ngx-material-timepicker';
 // import { Observable } from '';
 // import {connect,Client} from 'node_modules/paho/paho'
 declare var Paho: any; 
@@ -9,7 +10,12 @@ declare var Paho: any;
 })
 export class TtsCallComponent implements OnInit {
   client;
-  constructor(){}
+  schedule:boolean;
+  today:Date;
+  //@Input() ngxMaterialTimepickerTheme: NgxMaterialTimepickerTheme;
+  constructor(){
+    this.today=new Date();
+  }
   ngOnInit(){
     this.client= new Paho.MQTT.Client("m16.cloudmqtt.com", 38353, "laptop");
     this.client.connect({onSuccess: this.onConnected.bind(this),
@@ -24,9 +30,9 @@ export class TtsCallComponent implements OnInit {
     //this.client.send("pi-mob","hi");
   }
   onClickSubmit(data) {
-    var x = data.mob +'|'+ data.text;
+    var x = data.mob +'|'+ data.text+'|'+data.date+'|'+data.time;
     console.log(x);
     this.client.send("pi-mob",x);
-    alert("Call will be placed to : " + data.mob);
+    alert("Call will be placed to : " + x);
  }
 }
