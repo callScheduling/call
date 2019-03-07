@@ -10,13 +10,15 @@ import { HomeComponent } from './home/home.component';
 import {FormsModule} from '@angular/forms';
 import { MatMenuModule} from '@angular/material/menu';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { SmsComponent } from './sms/sms.component';
 // import {}
 // import * as mqtt from 'node_modules/paho/paho.js';
 @NgModule({
   declarations: [
     AppComponent,
     TtsCallComponent,
-    HomeComponent, 
+    HomeComponent,
+    SmsComponent, 
   ],
   imports: [
     FormsModule,

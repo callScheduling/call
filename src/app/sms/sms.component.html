@@ -1,0 +1,34 @@
+<div id="main">
+  <section>
+    <div style="text-align: center;"><h3><strong>Place A Call</strong></h3></div>
+    <form #phoneCall = "ngForm" (ngSubmit) = "onClickSubmit(phoneCall.value)" >
+      <mat-form-field style="display:block;"> 
+        <input matInput placeholder="Mobile No." name='mob' type="number" ngModel pattern="[0-9]{10}" required>
+      </mat-form-field>
+
+      <mat-form-field style="display:block;">
+        <textarea matInput placeholder="Enter Text" name='text' ngModel required></textarea>
+      </mat-form-field>
+      <mat-checkbox color="primary" #schedule style="display: block;">Schedule the call</mat-checkbox>
+      <div *ngIf="schedule.checked" style="display:grid;grid-template-columns: 1fr 1fr; grid-template-areas: 'date time';grid-gap:1em;">
+          <mat-form-field style="grid-area: 'date'">
+              <input matInput [matDatepicker]="picker" placeholder="Choose a date" name='date' ngModel >
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker touchUi #picker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field style="grid-area:'time'">
+            <input matInput [ngxTimepicker]="pick" name='time' placeholder="Choose a time" ngModel>
+            <ngx-material-timepicker #pick></ngx-material-timepicker>
+          </mat-form-field>
+      </div>
+      <mat-checkbox color="primary" #dtmf style="display: block;margin-top:2%;">DTMF Call</mat-checkbox>
+      <div *ngIf="dtmf.checked">
+        Code For DTMF will go here!!
+      </div>
+      <div style="text-align: center;margin-top: 5%;">
+        <button mat-fab color="primary" type='submit' [disabled]="phoneCall.form.invalid"><i class="material-icons">phone</i></button>
+      </div>
+    </form>
+  </section>
+</div>
+

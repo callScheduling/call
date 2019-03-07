@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
-// import { Observable } from '';
-// import {connect,Client} from 'node_modules/paho/paho'
 declare var Paho: any; 
 @Component({
-  selector: 'app-tts-call',
-  templateUrl: './tts-call.component.html',
-  styleUrls: ['./tts-call.component.css']
+  selector: 'app-sms',
+  templateUrl: './sms.component.html',
+  styleUrls: ['./sms.component.css']
 })
-export class TtsCallComponent implements OnInit {
+export class SmsComponent implements OnInit {
+
   client;
   schedule:boolean;
   today:Date;
@@ -53,9 +52,9 @@ export class TtsCallComponent implements OnInit {
     const momentDate = new Date(data.date); 
 
     var d = moment(momentDate).format("YYYY MM DD");
-    var x = 'call|'+data.mob +'|'+ data.text+'|'+d+' '+t;
+    var x = 'sms|'+data.mob +'|'+ data.text+'|'+d+' '+t;
     console.log(x);
     this.client.send("pi-mob",x);
-    alert("Call will be placed to : " + x);
+    alert("Sms will be sent to : " + x);
  }
-}  
+}

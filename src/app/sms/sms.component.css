@@ -1,0 +1,26 @@
+/* #main{
+    display: grid;
+    grid-template-columns: 1.5fr 8fr;
+    grid-template-areas: "nav content";
+} */
+section{
+    grid-area: "content";
+    margin-left: 10%;
+    margin-right:10%;
+    margin-top:5%;
+ }
+/* nav{
+    grid-area: "nav";
+    vertical-align: top;
+    text-align: center;
+    margin-top: 30%;
+    width: 100%;
+} */
+@media screen and (min-width: 992px) {
+    section{
+        margin-left: 30%;
+        margin-right:30%;
+        margin-top:5%;
+    }
+  }
+  
